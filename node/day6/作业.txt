@@ -1,3 +1,5 @@
 1.把酷狗音乐 request cheerio(歌名，歌手，头像，音乐地址等)存到mongodb
 
 2.用express生成接口
+
+3.用multer模块实现文件上传

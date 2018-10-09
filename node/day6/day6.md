@@ -59,3 +59,7 @@ add(1,[1,2])
 
 express+mongodb+vue
 
+# multer
+
+- [multer模块](https://github.com/Wscats/node-tutorial/issues/14)
+- (上传文件的原代码)[https://github.com/Wscats/node-tutorial/tree/master/uploadFiles]

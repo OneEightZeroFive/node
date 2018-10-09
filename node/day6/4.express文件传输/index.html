@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<input type="file" name="suibianxie" id="file" />
+		<button id="btn">上传</button>
+		<script>
+			var fileNode = document.getElementById("file");
+			var btn = document.getElementById("btn");
+			//点击上传
+			btn.onclick = function() {
+				var xmlhttp = new XMLHttpRequest();
+				//设置回调，当请求的状态发生变化时，就会被调用  
+				xmlhttp.onreadystatechange = function() {
+					//上传成功，返回的文件名，设置到父节点的背景中  
+					if(xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+						console.log(xmlhttp.responseText)
+					}
+				}
+				//ajax上传图片get/post 处理视频图片音频等文件，非字符串格式专用格式
+				var data = new FormData();
+				//传单个文件的写法
+				data.append("suibianxie", fileNode.files[0]);
+				xmlhttp.open("post", "http://localhost:3000/upload-single", true);
+				//不要缓存  
+				//xmlhttp.setRequestHeader("If-Modified-Since", "0");  
+				//提交请求  
+				xmlhttp.send(data);
+			}
+		</script>
+	</body>
+
+</html>
