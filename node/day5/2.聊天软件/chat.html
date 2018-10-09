@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input id="message" />
+    <button id="send">发送</button>
+    <!-- 聊天记录 -->
+    <ul id="list">
+    </ul>
+    <script src="js/socket.js"></script>
+    <script src="js/jquery.js"></script>
+    <script>
+        var socket = io("http://10.3.135.32:12345");
+        // 接受信息
+        socket.on("remessage", function (data) {
+            console.log(data)
+            $("#list").html($("#list").html()+`<li>${data}</li>`);
+        })
+        // 发送信息
+        $("#send").click(function(){
+            socket.emit("message", $("#message").val());
+        })
+    </script>
+</body>
+
+</html>

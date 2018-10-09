@@ -1,0 +1,1 @@
+function asdas(n,a){return n+a}

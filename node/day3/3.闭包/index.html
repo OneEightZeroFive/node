@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			//全局作用域
+			//函数里面有一个函数，闭包
+			//函数是第一公民
+			//
+			var g = 2;
+			function a(){
+				//被释放
+				var num = 1;
+				//局部作用域
+				return function b(){
+					console.log(num++)
+				}
+			}
+			//a()();
+			//a()();
+			
+			
+			var c = a();
+			c();
+			c();
+			c();
+			c();
+			//a()();
+			
+			(function(){
+				var a = 1;
+				function a(){
+					
+				}
+				
+			}}()
+			
+		</script>
+	</body>
+</html>

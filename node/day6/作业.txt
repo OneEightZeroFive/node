@@ -1,0 +1,1 @@
+1.把酷狗音乐 request cheerio(歌名，歌手，头像，音乐地址等)存到mongodb

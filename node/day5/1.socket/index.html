@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script src="js/socket.js"></script>
+    <script>
+        //引入完socket.js之后，会有一个全局的io变量
+        // 指向后端的socket服务器
+        var socket = io("http://localhost:6789");
+        // 前后端socket都具有两个方法
+        socket.emit("message","你好");
+        socket.on("news",function(data){
+            console.log(data)
+        })
+    </script>
+</body>
+</html>

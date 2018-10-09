@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+
+<body>
+    <script src="../../../../jquery.js"></script>
+    <input type="text" id="name" />
+    <input type="password" id="password" />
+    <button id="btn">登录</button>
+
+    <!--ajax发送get请求，express用路由接受，并且跟mysql数据库的用户信息做对比，然后返回登录结果-->
+    <script>
+        $("#btn").click(function () {
+            $.ajax({
+                type: "POST",
+                url: "http://localhost:3000/register",
+                data: {
+                    name: $("#name").val(),
+                    password: $("#password").val()
+                },
+                success(data) {
+                    console.log(data)
+                }
+            })
+        })
+
+    </script>
+</body>
+
+</html>
