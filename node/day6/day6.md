@@ -34,3 +34,28 @@ MongoClient.connect(url, function(err, client) {
 });
 console.log("开始使用mongodb");
 ```
+
+# lodash
+
+jquery
+```js
+$().xxx()
+```
+
+lodash
+```js
+_.xxx()
+```
+- [lodash中文官方网站](https://www.lodashjs.com/docs/4.17.5.html)
+
+function add(num1,num2){
+	return num1+num2
+}
+add(1,[1,2])
+
+
+
+# 项目
+
+express+mongodb+vue
+
